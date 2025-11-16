@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #FFFF00;
+  --color-secondary: #000000;
+  --color-text-light: #F0F0F0;
+  --color-accent-go: #FF00FF;
+  --color-accent-download: #00FFFF;
+}
+
+@layer base {
+  body {
+    @apply font-mono bg-secondary text-text-light overflow-x-hidden;
+    scroll-behavior: smooth;
+    /* Padrão de grade de fundo */
+    background-image: linear-gradient(rgba(255, 255, 0, 0.1) 1px, transparent 1px),
+                      linear-gradient(to right, rgba(255, 255, 0, 0.1) 1px, var(--color-secondary) 1px);
+    background-size: 30px 30px;
+  }
+
+  /* Scrollbar customizada */
+  body::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  body::-webkit-scrollbar-track {
+    background: var(--color-secondary);
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background-color: var(--color-primary);
+    border: 2px solid var(--color-secondary);
+  }
+}
+
+@layer utilities {
+  .section-padding {
+    @apply py-28 px-4;
+  }
+
+  .neo-shadow {
+    border: 3px solid var(--color-secondary);
+    box-shadow: 6px 6px 0px 0px var(--color-secondary);
+    transition: all 0.15s ease-out;
+  }
+
+  .neo-shadow-primary {
+    border: 3px solid var(--color-primary);
+    box-shadow: 6px 6px 0px 0px var(--color-primary);
+    transition: all 0.15s ease-out;
+  }
+
+  .neo-shadow-primary:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 4px 4px 0px 0px var(--color-primary);
+  }
+}
